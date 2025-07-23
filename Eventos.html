@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos - Colapso Humano</title>
+  <style>
+    body { background: #111; color: #f4f4f4; font-family: Arial, sans-serif; margin: 0; }
+    header, footer { background: #222; padding: 15px; text-align: center; }
+    nav { background: #333; display: flex; justify-content: center; }
+    nav a { color: white; padding: 12px 20px; text-decoration: none; display: block; }
+    nav a:hover { background: #555; }
+    .content { padding: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #444; padding: 8px; text-align: center; }
+    th { background: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Eventos</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="eventos.html">Eventos</a>
+    <a href="jogos.html">Jogos</a>
+    <a href="importante.html">Importante</a>
+    <a href="redes.html">Redes Sociais</a>
+    <a href="extras.html">Extras</a>
+  </nav>
+
+  <div class="content">
+    <h2>Calendário de Eventos 2025–2050</h2>
+    <table id="calendar">
+      <thead>
+        <tr><th>Ano</th><th>Mês</th><th>Evento</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    const eventos = {
+      "2025-11-26": "Data Provável de lançamento do Colapso Humano no roblox",
+      "2030-12-25": "Natal no Caos",
+      "2040-07-10": "Aniversário do Colapso"
+    };
+
+    const tbody = document.querySelector("#calendar tbody");
+    for (let ano = 2025; ano <= 2050; ano++) {
+      for (let mes = 1; mes <= 12; mes++) {
+        const data = `${ano}-${String(mes).padStart(2, '0')}`;
+        const evento = Object.entries(eventos).find(([d]) => d.startsWith(data));
+        tbody.innerHTML += `<tr><td>${ano}</td><td>${mes}</td><td>${evento ? evento[1] : "Sem eventos"}</td></tr>`;
+      }
+    }
+  </script>
+
+  <footer>
+    &copy; 2025 Colapso Humano. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
